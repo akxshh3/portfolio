@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Portfolio</title>
+<link rel="icon" href="pfimg.jpeg">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(198, 45, 154, 0.25);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: float 18s infinite alternate ease-in-out;
+}
+
+.bg-animation span:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+
+.bg-animation span:nth-child(2) {
+  top: 60%;
+  left: 30%;
+  background: rgba(66, 133, 244, 0.25);
+  animation-duration: 22s;
+}
+
+.bg-animation span:nth-child(3) {
+  top: 30%;
+  left: 70%;
+  background: rgba(233, 50, 187, 0.25);
+  animation-duration: 26s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-80px) translateX(60px);
+  }
+}
+
+
+
+/* NAVBAR */
+nav{
+ 
+  padding:15px 40px;
+  display:flex;
+    background: #ffebf4;
+
+  align-items:center;
+  position:sticky;
+  
+   display: flex;
+    justify-content: space-between;
+
+    
+  position: fixed;
+
+  left: 0;
+  width: 100%;
+  
+  z-index: 9999;
+
+
+ 
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  color:rgb(10, 10, 10);
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:#c62d9a;
+}
+
+/* PROFILE */
+.profile{
+  text-align:center;
+  padding:50px 20px 30px;
+}
+
+.profile-pic{
+  margin-top: 50px;
+  width:200px;
+  height:200px;
+  border-radius:60%;
+ object-fit: cover;
+  border:2px solid rgb(2, 2, 2);
+  margin-bottom:15px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.btn{
+  display:inline-block;
+  margin:12px 8px;
+  padding:10px 22px;
+  background:rgb(238, 196, 228);
+  color:#a63a8e;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+
+}
+
+.btn:hover{
+  background:#0a192f;
+  color:white;
+  transform:scale(1.07);
+}
+.fa-instagram {
+  color: #E4405F;
+}
+
+.fa-envelope {
+  color: #EA4335;
+}
+
+.fa-linkedin {
+  color: #0077B5;
+}
+
+.fa-github {
+  color: #181717;
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 18px;
+  align-items: center;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.social-icons a {
+  font-size: 26px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-4px) scale(1.15);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+section {
+  padding-top: 100px; /* navbar height + little gap */
+}
+section {
+  scroll-margin-top: 100px;
+}
+
+
+/* COMMON CONTAINER (same for all sections) */
+.section{
+  max-width:1000px;
+  margin:0 auto;
+  padding:35px;
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  margin-top:25px;
+  transition:.3s;
+  align-items: center;
+  text-align: center;
+      background: #fff2f9;
+
+}
+
+.section:hover{
+  transform:translateY(-6px);
+}
+
+.section h2{
+  margin-bottom:15px;
+  font-size:28px;
+  color:#0a0b0b;
+}
+
+/* SKILLS */
+.skills-box{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.skill{
+  padding:10px 18px;
+  background-color: #fafafa;
+  color: #040304;
+  border-radius:20px;
+  transition:.3s;
+}
+
+.skill:hover{
+  cursor: pointer;
+  background:#e932bb;
+  color:#0a192f;
+  font: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform:scale(1.1);
+}
+
+/* PROJECT CARDS */
+.projects{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.card{
+  background:#ffffff15;
+  padding:15px;
+  border-radius:12px;
+  flex:1 1 250px;
+  transition:.3s;
+  animation-name: project;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  background:#ffffff25;
+}
+@keyframes project{
+  
+}
+.project-img{
+    margin-top: 20px;
+  width:100;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:12px;
+}
+.card {
+    
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.edu {
+      background:#ffffff25;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.edu:hover{
+  transform:translateY(-5px);
+  background:#ffffff25;
+}
+.card:hover {
+    transform: translateY(-8px);
+    background-color: white;
+    color: #040304;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+
+
+footer {
+    background: #0a0a0a;
+    color: rgb(244, 240, 240);
+    padding: 15px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="bg-animation">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+<nav>
+    
+  <h2 style="text-align: start;">AKSHAYA </h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PROFILE -->
+<section class="profile">
+  <img src="pfimg.jpeg" class="profile-pic">
+  <h1>BORA AKSHAYA RAJU</h1>
+  <p>Full Stack Developer | Python | React | Flask | Django</p>
+  <p>I build responsive full-stack apps using Python, FastAPI, React, and more!</p>
+
+  <a href="BORA AKSHAYA RAJU.pdf" target="_blank" class="btn">View Resume</a>
+  <a href="#projects" class="btn">My Work</a>
+<div class="social-icons">
+  <a href="https://instagram.com/_.akshayaa.__._" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="mailto:akshumeghs2649@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/bora-akshaya-raju-a37589275" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+
+  <a href="https://github.com/akxshh3" target="_blank">
+    <i class="fa-brands fa-github"></i>
+  </a>
+</div>
+
+
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>ABOUT ME</h2>
+  <p>
+  Hi!  I am Akshaya Raj, a passionate and self-motivated Full Stack Developer with a strong interest in building modern, responsive, and user-friendly web applications. I enjoy turning ideas into real-world digital solutions using technologies like React, Java,  and Python.
+
+I have worked on projects such as MemeMash, a sticker download web app,  and a responsive calculator using HTML, CSS, and JavaScript. These projects helped me strengthen my understanding of frontend and backend development, API integration, and UI design.
+
+I am always eager to learn new technologies, improve my problem-solving skills, and explore better ways to build scalable applications. 
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>SKILLS</h2>
+  <div class="skills-box">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Java</div>
+    <div class="skill">Python</div>
+    <div class="skill">C++</div>
+    <div class="skill">MYSQL</div>
+    <div class="skill">MS word</div>
+    <div class="skill">Linux</div>
+    <div class="skill">MS excel</div>
+    <div class="skill">Django</div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <h2>EDUCATION</h2>
+  <div class="edu">
+  <p><b>Bachelor's – Computer Science Engineering</b><br>
+ KL University | 2027</p>
+
+  <br>
+
+  <p><b>Intermediate</b><br>
+  Sri Chaitanya Junior College | 2022</p>
+<br>
+   <p><b>School</b><br>
+St. Ann's girls high school | 2020</p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>PROJECTS</h2>
+  <div class="projects">
+        <div class="card">
+      <h3>Portfolio Website</h3>
+<img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png"
+     class="project-img"
+     alt="Cartoon Girl">
+      <p>
+        Personal portfolio built using HTML and CSS.  
+        Features smooth navigation, responsive design, and modern UI.  
+        Showcases skills, projects, and contact information.
+      </p>
+      <a href="https://akxshh3.github.io/project2/" class="btn"> view project</a>
+    </div>
+    <div class="card">
+      <h3>MemeMash</h3>
+<img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" class="project-img" alt="Meme App">
+
+      <br>
+      <p>Sticker download web app using React. We can add and download sticker from the web page. Allows users to search, upload, and download stickers easily.  
+Built with responsive UI and optimized image loading for better performance.
+</p>
+<a href="https://viha-lilac.vercel.app/" class="btn">view project</a>
+   <br><br>
+</div>
+
+    
+    <div class="card">
+      <h3>Calculator</h3>
+<img src="https://cdn-icons-png.flaticon.com/512/891/891175.png" class="project-img" alt="Calculator">
+
+      <br>
+      <p>Responsive calculator using HTML, CSS. Performs real-time arithmetic calculations with keyboard support.  
+  Implemented keyboard input support and dynamic event handling for fast calculations.Designed with clean UI, hover effects, and mobile-friendly layout for better usability.
+      </p>
+<a href="https://akxshh3.github.io/project2/" class="btn"> view project</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <h2>Let's Connect..!</h2>
+ <div class="direct-contact">
+    <a href="mailto:akshumeghs2649@gmail.com" class="btn">Email</a>
+    <a href="tel:+916281691631" class="btn">Phone</a>
+  </div>
+
+ 
+</section>
+
+
+</section>
+<footer>
+    <p>© 2026 Akshaya Raj | All Rights Reserved </p>
+    <div class="social-icons">
+  <a href="https://instagram.com/_.akshayaa.__._" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="mailto:akshumeghs2649@gmail.com">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/bora-akshaya-raju-a37589275" target="_blank">
+    <i class="fa-brands fa-linkedin"></i>
+  </a>
+
+  <a href="https://github.com/akxshh3" target="_blank">
+    <i class="fa-brands fa-github"></i>
+  </a>
+</div>
+
+
+</footer>
+
+</body>
+</html>
+
